@@ -1,0 +1,33 @@
+# ~/.config/wofi/config
+
+# Display mode (run, drun, dmenu, or a combination like run,drun)
+show=drun
+
+# CSS stylesheet path
+style=/home/user/.config/wofi/style.css
+
+# Colors file (optional, defaults to pywal cache)
+# color=/home/user/.config/wofi/colors
+
+# Menu dimensions
+width=600
+height=400
+
+# Position on screen (center, top_left, top, etc.)
+location=center
+
+# Search prompt
+prompt=Launch application
+
+# Enable dark GTK theme if available
+gtk_dark=true
+
+# Allow images and markup
+allow_images=true
+allow_markup=true
+
+# Case-insensitive search
+insensitive=true
+
+# Hide scrollbars
+hide_scroll=true
