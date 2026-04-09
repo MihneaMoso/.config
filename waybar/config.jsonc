@@ -1,0 +1,78 @@
+{
+    "layer": "top",
+    "position": "bottom", 
+    "height": 35,
+    "spacing": 4,
+    "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
+    "modules-center": ["hyprland/window"],
+    // ADDED THE MISSING MODULES HERE:
+    "modules-right": ["cpu", "memory", "disk", "custom/external-ip", "pulseaudio", "network", "clock", "tray"],
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 20,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": ["kitty"]
+    },
+
+    "hyprland/window": {
+        "format": "{title}",
+        "separate-outputs": true
+    },
+
+    "clock": {
+        // This shows Time (Hour:Minute) followed by the Date (Month/Day)
+        "format": " {:%H:%M  📅 %d/%m}", 
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%A, %B %d, %Y (%R)}"
+    },
+
+    "network": {
+        // REMOVED "interface": "wlan0" so it auto-detects your active connection
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰈀 {ifname}",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "󰖪 Offline",
+        "tooltip-format": "IP: {ipaddr}\nGateway: {gwaddr}\nDown: {bandwidthDownBits}\nUp: {bandwidthUpBits}"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 Muted",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": true,
+        "interval": 2
+    },
+
+    "memory": {
+        "format": " {used:0.1f}G/{total:0.1f}G",
+        "tooltip": true,
+        "interval": 5
+    },
+
+    "disk": {
+        "path": "/",
+        "format": " {percentage_used}%",
+        "interval": 60
+    },
+
+    "custom/external-ip": {
+        "format": "🌐 {}",
+        "exec": "curl -s ifconfig.me",
+        "interval": 300
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    }
+}
