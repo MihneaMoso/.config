@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+cd /home/moso/.config
+
+if [[ $(git status --porcelain) ]]; then
+    arr=()
+    mapfile -t arr < <(cat <({ git diff --name-only ; git diff --name-only --staged ; } | sort | uniq))
+
+    (IFS=','; echo "Changes detected in ${arr[*]}")
+
+    git add .
+    git commit -m "Changes detected in ${arr[@]}"
+    git push -u origin master
+fi
