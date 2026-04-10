@@ -1,0 +1,13 @@
+[Unit]
+Description=Disable unwanted ACPI wakeup devices before suspend
+Before=sleep.target
+Before=suspend.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/fix-wakeup.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=sleep.target
+WantedBy=suspend.target
