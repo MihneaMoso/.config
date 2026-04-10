@@ -8,7 +8,8 @@ if [[ $(git status --porcelain) ]]; then
 
     (IFS=','; echo "Changes detected in ${arr[*]}")
 
-    git add .
+    git add . --all
+    git add autopush
     git commit -m "Changes detected in ${arr[@]}"
     git push -u origin master
 fi
