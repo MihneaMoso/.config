@@ -18,6 +18,8 @@ vim.o.list = true
 --vim.o.listchars = "tabs:> "
 vim.o.path = "**"
 
+vim.g.neovide_cursor_animation_length = 0
+
 vim.cmd(":colorscheme retrobox")
 vim.cmd(":command! -nargs=+ Grep execute 'silent grep! <args>' | copen")
 
@@ -70,5 +72,16 @@ if vim.g.neovide then
   end, { desc = "Paste from clipboard", silent = true })
 end
 
-map('n', '<C-h>', ':bprevious<CR>', { desc = 'Previous buffer' })
-map('n', '<C-l>', ':bnext<CR>', { desc = 'Next buffer' })
+--map('n', '<C-h>', ':bprevious<CR>', { desc = 'Previous buffer' })
+--map('n', '<C-l>', ':bnext<CR>', { desc = 'Next buffer' })
+
+map('n', '<C-w><Up>', '<C-w>k')
+map('n', '<C-w><Down>', '<C-w>j')
+map('n', '<C-w><Left>', '<C-w>h')
+map('n', '<C-w><Right>', '<C-w>l')
+
+map('n', '<C-w><C-Up>', '<C-w>k')
+map('n', '<C-w><C-Down>', '<C-w>j')
+map('n', '<C-w><C-Left>', '<C-w>h')
+map('n', '<C-w><C-Right>', '<C-w>l')
+
