@@ -18,6 +18,8 @@ vim.o.list = true
 --vim.o.listchars = "tabs:> "
 vim.o.path = "**"
 vim.opt.mouse = 'a'
+vim.o.autowriteall = true
+vim.o.hidden = true
 
 vim.g.neovide_cursor_animation_length = 0
 
@@ -32,6 +34,33 @@ vim.api.nvim_create_autocmd("FileType", {
     },
     callback = function() vim.treesitter.start() end,
 })
+
+-- Ensure netrw is listed in the buffer list
+vim.api.nvim_create_autocmd({"FileType", "BufEnter"}, {
+    pattern = "netrw",
+    callback = function()
+        vim.opt_local.buflisted = true
+    end,
+})
+
+local function smart_buffer_move(direction)
+    -- direction is 1 for next, -1 for previous
+    local cmd = direction == 1 and "bnext" or "bprev"
+    
+    -- Try to move
+    local success, _ = pcall(vim.cmd, cmd)
+    
+    -- If we landed on a buffer that isn't a file or netrw, 
+    -- and we have more than one buffer, skip it.
+    if success and vim.bo.buftype ~= "" and vim.bo.filetype ~= "netrw" then
+        vim.cmd(cmd)
+    end
+end
+
+-- Keymaps for Alt + Arrow Keys
+-- Note: On some terminals, <A- is represented as <M- (Meta)
+vim.keymap.set('n', '<A-Right>', function() smart_buffer_move(1) end, { desc = "Next Buffer" })
+vim.keymap.set('n', '<A-Left>', function() smart_buffer_move(-1) end, { desc = "Prev Buffer" })
 
 local map = vim.keymap.set
 map("n", "<C-h>", "<C-w><C-h>")
@@ -51,15 +80,17 @@ map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 map("t", "<ESC>", "<C-\\><C-n>")
 -- map("n", "<A-h>", ":below term<CR>i")
+-- map("n", "<A-Left>", ":bprevious")
 
 map("n", "<leader>w", ":write<CR>")
 map("n", "<leader>q", ":quit<CR>")
 map("n", "<leader>Q", ":quit!<CR>")
 map("v", "<leader>y", "\"+y")
-map("n", "<leader>e", ":Lexplore<CR>")
+map("n", "<leader>f", ":Lexplore<CR>")
+map("n", "<leader>e", ":Explore<CR>")
 map("n", "<leader>v", ":edit $MYVIMRC<CR>")
-map("n", "<leader>ff", ":find ")
-map("n", "<leader>fg", ":Grep ")
+--map("n", "<leader>ff", ":find ")
+--map("n", "<leader>fg", ":Grep ")
 map("n", "<leader>r", ":make!<CR>")
 map("n", "<leader>R", ":set makeprg=")
 map("n", "<leader>x", ":copen<CR>")
@@ -67,6 +98,11 @@ map("n", "<leader>c", ":!ctags -R .<CR>")
 map("n", "<leader>s", ":split<CR><C-w><Down>")
 map("n", "<leader>t", ":below term<CR>i")
 
+vim.keymap.set("n", "<leader>/", "gcc", { remap = true })
+vim.keymap.set("v", "<leader>/", "gc", { remap = true })
+
+vim.keymap.set("n", "<C-/>", "gcc", { remap = true })
+vim.keymap.set("v", "<C-/>", "gc", { remap = true })
 
 
 -- Regular pasting
