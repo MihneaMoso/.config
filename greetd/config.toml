@@ -4,8 +4,8 @@ vt = 1
 
 [default_session]
 # Replace 'Hyprland' with the full path if you want to be 100% safe
-# command = "tuigreet --time --asterisks --remember --cmd Hyprland"
-command = "tuigreet --time --asterisks --remember --cmd 'dbus-run-session Hyprland'"
+command = "tuigreet --time --asterisks --remember --cmd start-hyprland"
+# command = "tuigreet --time --asterisks --remember --cmd 'dbus-run-session Hyprland'"
 
 # The user to run the greeter as
 user = "greeter"
