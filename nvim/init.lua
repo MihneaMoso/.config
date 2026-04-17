@@ -26,14 +26,6 @@ vim.g.neovide_cursor_animation_length = 0
 vim.cmd(":colorscheme retrobox")
 vim.cmd(":command! -nargs=+ Grep execute 'silent grep! <args>' | copen")
 
-vim.treesitter.language.register("cpp", "c")
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = {
-        "c", "h", "cpp",
-        "lua"
-    },
-    callback = function() vim.treesitter.start() end,
-})
 
 -- Ensure netrw is listed in the buffer list
 vim.api.nvim_create_autocmd({"FileType", "BufEnter"}, {
@@ -57,12 +49,28 @@ local function smart_buffer_move(direction)
     end
 end
 
--- Keymaps for Alt + Arrow Keys
--- Note: On some terminals, <A- is represented as <M- (Meta)
-vim.keymap.set('n', '<A-Right>', function() smart_buffer_move(1) end, { desc = "Next Buffer" })
-vim.keymap.set('n', '<A-Left>', function() smart_buffer_move(-1) end, { desc = "Prev Buffer" })
+
+local function move_line_up()
+    vim.cmd(":m .-2==")
+end
+
+local function move_line_down()
+    vim.cmd(":m .+1==")
+end
+
 
 local map = vim.keymap.set
+
+-- Keymaps for Alt + Arrow Keys
+-- Note: On some terminals, <A- is represented as <M- (Meta)
+map('n', '<A-Right>', function() smart_buffer_move(1) end, { desc = "Next Buffer" })
+map('n', '<A-Left>', function() smart_buffer_move(-1) end, { desc = "Prev Buffer" })
+
+map('n', '<A-Up>', function() move_line_up() end, { desc = "Move line up" })
+map('n', '<A-Down>', function() move_line_down() end, { desc = "Move line below" })
+
+
+
 map("n", "<C-h>", "<C-w><C-h>")
 map("n", "<C-j>", "<C-w><C-j>")
 map("n", "<C-k>", "<C-w><C-k>")
@@ -96,24 +104,29 @@ map("n", "<leader>R", ":set makeprg=")
 map("n", "<leader>x", ":copen<CR>")
 map("n", "<leader>c", ":!ctags -R .<CR>")
 map("n", "<leader>s", ":split<CR><C-w><Down>")
+map("n", "<leader>d", ":vsplit<CR><C-w><Right>")
 map("n", "<leader>t", ":below term<CR>i")
 
-vim.keymap.set("n", "<leader>/", "gcc", { remap = true })
-vim.keymap.set("v", "<leader>/", "gc", { remap = true })
+map("n", "<leader>/", "gcc", { remap = true })
+map("v", "<leader>/", "gc", { remap = true })
 
-vim.keymap.set("n", "<C-/>", "gcc", { remap = true })
-vim.keymap.set("v", "<C-/>", "gc", { remap = true })
+map("n", "<C-/>", "gcc", { remap = true })
+map("v", "<C-/>", "gc", { remap = true })
 
 
--- Regular pasting
-vim.keymap.set("v", "<C-c>", '"+y', { desc = "Copy to clipboard" })
-  vim.keymap.set({ "n", "i", "v", "c", "t" }, "<C-v>", function()
-    vim.api.nvim_paste(vim.fn.getreg("+"), true, -1)
-  end, { desc = "Paste from clipboard", silent = true })
+-- Regular copy/cut/pasting
+map("v", "<C-c>", '"+y', { desc = "Copy to clipboard" })
+map({ "n", "i", "v", "c", "t" }, "<C-x>", function()
+  vim.cmd('normal! "+d')
+end, { desc = "Cut to clipboard", silent = true })
 
+map({ "n", "i", "v", "c", "t" }, "<C-v>", function()
+  vim.api.nvim_paste(vim.fn.getreg("+"), true, -1)
+end, { desc = "Paste from clipboard", silent = true })
 
 --map('n', '<C-h>', ':bprevious<CR>', { desc = 'Previous buffer' })
 --map('n', '<C-l>', ':bnext<CR>', { desc = 'Next buffer' })
+
 
 -- Pane navigation
 map('n', '<C-w><Up>', '<C-w>k')
