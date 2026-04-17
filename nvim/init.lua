@@ -76,6 +76,10 @@ map("n", "<C-j>", "<C-w><C-j>")
 map("n", "<C-k>", "<C-w><C-k>")
 map("n", "<C-l>", "<C-w><C-l>")
 
+-- Word deletion
+map("i", "<C-Backspace>", "<C-w>", { noremap = true, silent = true })
+map("i", "<C-Delete>", "<C-o>dw", { noremap = true, silent = true })
+
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
 
