@@ -6,7 +6,7 @@
     "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
     "modules-center": ["hyprland/window"],
     // ADDED THE MISSING MODULES HERE:
-    "modules-right": ["cpu", "memory", "disk", "custom/external-ip", "pulseaudio", "network", "clock", "tray"],
+    "modules-right": ["cpu", "memory", "disk", "custom/external-ip", "pulseaudio", "bluetooth", "network", "clock", "tray"],
 
     "wlr/taskbar": {
         "format": "{icon}",
@@ -15,6 +15,26 @@
         "on-click": "activate",
         "on-click-middle": "close",
         "ignore-list": ["kitty"]
+    },
+
+     "bluetooth": {
+        "format": "󰂯 {status}",
+        "format-connected": "󰂱 {device_alias}",
+        "format-connected-battery": "󰂱 {device_alias} {device_battery_percentage}%",
+        "format-off": "󰂲 Off",
+        "format-disabled": "󰂲 Disabled",
+        
+        // Tooltip shows connected devices and their MAC addresses
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        
+        // Left click opens the device picker (blueman-manager)
+        "on-click": "blueman-manager",
+        
+        // Right click toggles bluetooth power on and off
+        "on-click-right": "bash -c 'if bluetoothctl show | grep -q \"Powered: yes\"; then bluetoothctl power off; else bluetoothctl power on; fi'"
     },
 
     "hyprland/window": {
