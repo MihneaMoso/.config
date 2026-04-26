@@ -12,4 +12,5 @@ set --export PATH $BUN_INSTALL/bin $PATH
 set -Ux --export SSL_CERT_FILE '/etc/ssl/certs/ca-certificates.crt'
 
 # aliases
-alias curl="curl -k"
+# alias curl="curl -k"
+alias v="nvim"
