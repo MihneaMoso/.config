@@ -898,3 +898,144 @@
 2026-04-29T20:04:53.864Z info: Current version 3.68.0
 2026-04-29T20:04:53.864Z info: Newest version 3.68.0
 2026-04-29T20:04:54.023Z info: ffmpeg -hide_banner -f lavfi -i 'nullsrc=s=256x256:d=1' -f null -
+2026-04-30T19:35:13.147Z info: LosslessCut version 3.68.0 { isDev: false }
+2026-04-30T19:35:13.162Z info: Initialized config store
+2026-04-30T19:35:13.163Z info: Waiting for app to become ready
+2026-04-30T19:35:13.216Z info: CLI arguments { _: [] }
+2026-04-30T19:35:13.446Z info: Current version 3.68.0
+2026-04-30T19:35:13.446Z info: Newest version 3.68.0
+2026-04-30T19:35:13.612Z info: ffmpeg -hide_banner -f lavfi -i 'nullsrc=s=256x256:d=1' -f null -
+2026-04-30T19:35:25.045Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/1.mp4' -hide_banner
+2026-04-30T19:35:30.365Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/2.mp4' -hide_banner
+2026-04-30T19:36:23.306Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/1.mp4' -hide_banner
+2026-04-30T19:38:14.581Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/1.mp4' -hide_banner
+2026-04-30T19:38:31.029Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/2.mp4' -hide_banner
+2026-04-30T19:38:33.137Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/3.mp4' -hide_banner
+2026-04-30T19:38:34.051Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/4.mp4' -hide_banner
+2026-04-30T19:38:35.068Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/5.mp4' -hide_banner
+2026-04-30T19:38:39.275Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/1.mp4' -hide_banner
+2026-04-30T19:38:52.008Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/1.mp4' -hide_banner
+2026-04-30T19:39:07.042Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/1.mp4' -hide_banner
+2026-04-30T19:39:07.079Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/2.mp4' -hide_banner
+2026-04-30T19:39:07.114Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/3.mp4' -hide_banner
+2026-04-30T19:39:07.150Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/4.mp4' -hide_banner
+2026-04-30T19:39:07.186Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/5.mp4' -hide_banner
+2026-04-30T19:39:33.770Z info: readFormatData /home/moso/Downloads/1.mp4
+2026-04-30T19:39:33.770Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/1.mp4' -hide_banner
+2026-04-30T19:39:33.811Z info: readFormatData /home/moso/Downloads/2.mp4
+2026-04-30T19:39:33.811Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/2.mp4' -hide_banner
+2026-04-30T19:39:33.850Z info: readFormatData /home/moso/Downloads/3.mp4
+2026-04-30T19:39:33.850Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/3.mp4' -hide_banner
+2026-04-30T19:39:33.890Z info: readFormatData /home/moso/Downloads/4.mp4
+2026-04-30T19:39:33.890Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/4.mp4' -hide_banner
+2026-04-30T19:39:33.930Z info: readFormatData /home/moso/Downloads/5.mp4
+2026-04-30T19:39:33.930Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/5.mp4' -hide_banner
+2026-04-30T19:39:33.969Z info: ffmpeg -hide_banner -f concat -safe 0 -protocol_whitelist 'file,pipe,fd' -i - -map '0:0' '-c:0' copy '-disposition:0' default -map '0:1' '-c:1' copy '-disposition:1' default -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/merged.mp4'
+2026-04-30T19:39:34.227Z warn: Notification failed 
+2026-04-30T19:46:46.378Z info: LosslessCut version 3.68.0 { isDev: false }
+2026-04-30T19:46:46.393Z info: Initialized config store
+2026-04-30T19:46:46.394Z info: Waiting for app to become ready
+2026-04-30T19:46:46.449Z info: CLI arguments { _: [] }
+2026-04-30T19:46:46.704Z info: Current version 3.68.0
+2026-04-30T19:46:46.704Z info: Newest version 3.68.0
+2026-04-30T19:46:46.840Z info: ffmpeg -hide_banner -f lavfi -i 'nullsrc=s=256x256:d=1' -f null -
+2026-04-30T19:46:50.617Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/merged.mp4' -hide_banner
+2026-04-30T19:58:21.763Z info: ffmpeg -hide_banner -ss '1.51264' -i '/home/moso/Downloads/merged.mp4' -t '12.65693' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/merged-00.00.01.513-00.00.14.170-seg1.mp4'
+2026-04-30T19:58:21.829Z info: ffmpeg -hide_banner -ss '15.58308' -i '/home/moso/Downloads/merged.mp4' -t '19.63408' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/merged-00.00.15.583-00.00.35.217-seg2.mp4'
+2026-04-30T19:58:21.887Z info: ffmpeg -hide_banner -ss '36.45747' -i '/home/moso/Downloads/merged.mp4' -t '63.33051' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/merged-00.00.36.457-00.01.39.788-seg3.mp4'
+2026-04-30T19:58:21.960Z info: ffmpeg -hide_banner -ss '104.67444' -i '/home/moso/Downloads/merged.mp4' -t '31.78057' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/merged-00.01.44.674-00.02.16.455-seg4.mp4'
+2026-04-30T19:58:22.018Z info: ffmpeg -hide_banner -ss '142.00994' -i '/home/moso/Downloads/merged.mp4' -t '33.97628' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/merged-00.02.22.010-00.02.55.986-seg5.mp4'
+2026-04-30T19:58:22.086Z info: ffmpeg -hide_banner -ss '190.01855' -i '/home/moso/Downloads/merged.mp4' -t '16.85529' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/merged-00.03.10.019-00.03.26.874-seg6.mp4'
+2026-04-30T19:58:22.148Z info: ffmpeg -hide_banner -ss '234.43848' -i '/home/moso/Downloads/merged.mp4' -t '14.35808' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/merged-00.03.54.438-00.04.08.797-seg7.mp4'
+2026-04-30T19:58:22.207Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/merged-00.00.01.513-00.00.14.170-seg1.mp4' -hide_banner
+2026-04-30T19:58:22.249Z info: readFormatData /home/moso/Downloads/merged-00.00.01.513-00.00.14.170-seg1.mp4
+2026-04-30T19:58:22.250Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/merged-00.00.01.513-00.00.14.170-seg1.mp4' -hide_banner
+2026-04-30T19:58:22.291Z info: readFormatData /home/moso/Downloads/merged-00.00.15.583-00.00.35.217-seg2.mp4
+2026-04-30T19:58:22.291Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/merged-00.00.15.583-00.00.35.217-seg2.mp4' -hide_banner
+2026-04-30T19:58:22.332Z info: readFormatData /home/moso/Downloads/merged-00.00.36.457-00.01.39.788-seg3.mp4
+2026-04-30T19:58:22.332Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/merged-00.00.36.457-00.01.39.788-seg3.mp4' -hide_banner
+2026-04-30T19:58:22.371Z info: readFormatData /home/moso/Downloads/merged-00.01.44.674-00.02.16.455-seg4.mp4
+2026-04-30T19:58:22.371Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/merged-00.01.44.674-00.02.16.455-seg4.mp4' -hide_banner
+2026-04-30T19:58:22.412Z info: readFormatData /home/moso/Downloads/merged-00.02.22.010-00.02.55.986-seg5.mp4
+2026-04-30T19:58:22.413Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/merged-00.02.22.010-00.02.55.986-seg5.mp4' -hide_banner
+2026-04-30T19:58:22.449Z info: readFormatData /home/moso/Downloads/merged-00.03.10.019-00.03.26.874-seg6.mp4
+2026-04-30T19:58:22.449Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/merged-00.03.10.019-00.03.26.874-seg6.mp4' -hide_banner
+2026-04-30T19:58:22.492Z info: readFormatData /home/moso/Downloads/merged-00.03.54.438-00.04.08.797-seg7.mp4
+2026-04-30T19:58:22.492Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/merged-00.03.54.438-00.04.08.797-seg7.mp4' -hide_banner
+2026-04-30T19:58:22.523Z info: ffmpeg -hide_banner -f concat -safe 0 -protocol_whitelist 'file,pipe,fd' -i - -map '0:0' '-c:0' copy '-disposition:0' default -map '0:1' '-c:1' copy '-disposition:1' default -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/merged-cut-merged-1777579102200.mp4'
+2026-04-30T19:58:22.796Z warn: Notification failed 
+2026-04-30T20:02:11.404Z info: LosslessCut version 3.68.0 { isDev: false }
+2026-04-30T20:02:11.419Z info: Initialized config store
+2026-04-30T20:02:11.420Z info: Waiting for app to become ready
+2026-04-30T20:02:11.482Z info: CLI arguments { _: [] }
+2026-04-30T20:02:11.750Z info: Current version 3.68.0
+2026-04-30T20:02:11.751Z info: Newest version 3.68.0
+2026-04-30T20:02:11.891Z info: ffmpeg -hide_banner -f lavfi -i 'nullsrc=s=256x256:d=1' -f null -
+2026-04-30T20:02:16.655Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/merged-cut-merged-1777579102200.mp4' -hide_banner
+2026-04-30T20:09:23.417Z info: ffmpeg -hide_banner -ss '1.33836' -i '/home/moso/Downloads/merged-cut-merged-1777579102200.mp4' -t '12.38800' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/merged-cut-merged-1777579102200-00.00.01.338-00.00.13.726-seg1.mp4'
+2026-04-30T20:09:23.473Z info: ffmpeg -hide_banner -ss '15.00021' -i '/home/moso/Downloads/merged-cut-merged-1777579102200.mp4' -t '17.39299' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/merged-cut-merged-1777579102200-00.00.15.000-00.00.32.393-seg2.mp4'
+2026-04-30T20:09:23.533Z info: ffmpeg -hide_banner -ss '36.17379' -i '/home/moso/Downloads/merged-cut-merged-1777579102200.mp4' -t '62.95218' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/merged-cut-merged-1777579102200-00.00.36.174-00.01.39.126-seg3.mp4'
+2026-04-30T20:09:23.613Z info: ffmpeg -hide_banner -ss '100.99415' -i '/home/moso/Downloads/merged-cut-merged-1777579102200.mp4' -t '31.47128' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/merged-cut-merged-1777579102200-00.01.40.994-00.02.12.465-seg4.mp4'
+2026-04-30T20:09:23.671Z info: ffmpeg -hide_banner -ss '134.17809' -i '/home/moso/Downloads/merged-cut-merged-1777579102200.mp4' -t '12.30510' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/merged-cut-merged-1777579102200-00.02.14.178-00.02.26.483-seg5.mp4'
+2026-04-30T20:09:23.726Z info: ffmpeg -hide_banner -ss '153.51473' -i '/home/moso/Downloads/merged-cut-merged-1777579102200.mp4' -t '13.43348' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/merged-cut-merged-1777579102200-00.02.33.515-00.02.46.948-seg6.mp4'
+2026-04-30T20:09:23.781Z info: ffmpeg -hide_banner -ss '172.73771' -i '/home/moso/Downloads/merged-cut-merged-1777579102200.mp4' -t '14.74841' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/merged-cut-merged-1777579102200-00.02.52.738-00.03.07.486-seg7.mp4'
+2026-04-30T20:09:23.835Z info: ffmpeg -hide_banner -ss '195.77001' -i '/home/moso/Downloads/merged-cut-merged-1777579102200.mp4' -t '5.65915' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/merged-cut-merged-1777579102200-00.03.15.770-00.03.21.429-seg8.mp4'
+2026-04-30T20:09:23.888Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/merged-cut-merged-1777579102200-00.00.01.338-00.00.13.726-seg1.mp4' -hide_banner
+2026-04-30T20:09:23.927Z info: readFormatData /home/moso/Downloads/merged-cut-merged-1777579102200-00.00.01.338-00.00.13.726-seg1.mp4
+2026-04-30T20:09:23.927Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/merged-cut-merged-1777579102200-00.00.01.338-00.00.13.726-seg1.mp4' -hide_banner
+2026-04-30T20:09:23.967Z info: readFormatData /home/moso/Downloads/merged-cut-merged-1777579102200-00.00.15.000-00.00.32.393-seg2.mp4
+2026-04-30T20:09:23.968Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/merged-cut-merged-1777579102200-00.00.15.000-00.00.32.393-seg2.mp4' -hide_banner
+2026-04-30T20:09:24.007Z info: readFormatData /home/moso/Downloads/merged-cut-merged-1777579102200-00.00.36.174-00.01.39.126-seg3.mp4
+2026-04-30T20:09:24.007Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/merged-cut-merged-1777579102200-00.00.36.174-00.01.39.126-seg3.mp4' -hide_banner
+2026-04-30T20:09:24.045Z info: readFormatData /home/moso/Downloads/merged-cut-merged-1777579102200-00.01.40.994-00.02.12.465-seg4.mp4
+2026-04-30T20:09:24.045Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/merged-cut-merged-1777579102200-00.01.40.994-00.02.12.465-seg4.mp4' -hide_banner
+2026-04-30T20:09:24.084Z info: readFormatData /home/moso/Downloads/merged-cut-merged-1777579102200-00.02.14.178-00.02.26.483-seg5.mp4
+2026-04-30T20:09:24.084Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/merged-cut-merged-1777579102200-00.02.14.178-00.02.26.483-seg5.mp4' -hide_banner
+2026-04-30T20:09:24.121Z info: readFormatData /home/moso/Downloads/merged-cut-merged-1777579102200-00.02.33.515-00.02.46.948-seg6.mp4
+2026-04-30T20:09:24.121Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/merged-cut-merged-1777579102200-00.02.33.515-00.02.46.948-seg6.mp4' -hide_banner
+2026-04-30T20:09:24.163Z info: readFormatData /home/moso/Downloads/merged-cut-merged-1777579102200-00.02.52.738-00.03.07.486-seg7.mp4
+2026-04-30T20:09:24.163Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/merged-cut-merged-1777579102200-00.02.52.738-00.03.07.486-seg7.mp4' -hide_banner
+2026-04-30T20:09:24.204Z info: readFormatData /home/moso/Downloads/merged-cut-merged-1777579102200-00.03.15.770-00.03.21.429-seg8.mp4
+2026-04-30T20:09:24.205Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/merged-cut-merged-1777579102200-00.03.15.770-00.03.21.429-seg8.mp4' -hide_banner
+2026-04-30T20:09:24.235Z info: ffmpeg -hide_banner -f concat -safe 0 -protocol_whitelist 'file,pipe,fd' -i - -map '0:0' '-c:0' copy '-disposition:0' default -map '0:1' '-c:1' copy '-disposition:1' default -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/demo-final.mp4'
+2026-04-30T20:09:24.496Z warn: Notification failed 
+2026-04-30T20:10:30.509Z info: LosslessCut version 3.68.0 { isDev: false }
+2026-04-30T20:10:30.516Z info: Initialized config store
+2026-04-30T20:10:30.516Z info: Waiting for app to become ready
+2026-04-30T20:10:30.569Z info: CLI arguments { _: [] }
+2026-04-30T20:10:30.833Z info: Current version 3.68.0
+2026-04-30T20:10:30.833Z info: Newest version 3.68.0
+2026-04-30T20:10:30.969Z info: ffmpeg -hide_banner -f lavfi -i 'nullsrc=s=256x256:d=1' -f null -
+2026-04-30T20:11:06.267Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/demo-final.mp4' -hide_banner
+2026-04-30T20:13:16.884Z info: LosslessCut version 3.68.0 { isDev: false }
+2026-04-30T20:13:16.899Z info: Initialized config store
+2026-04-30T20:13:16.899Z info: Waiting for app to become ready
+2026-04-30T20:13:16.949Z info: CLI arguments { _: [] }
+2026-04-30T20:13:17.167Z info: Current version 3.68.0
+2026-04-30T20:13:17.167Z info: Newest version 3.68.0
+2026-04-30T20:13:17.335Z info: ffmpeg -hide_banner -f lavfi -i 'nullsrc=s=256x256:d=1' -f null -
+2026-04-30T20:13:22.350Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/demo-final.mp4' -hide_banner
+2026-04-30T20:26:20.675Z info: ffmpeg -hide_banner -ss '1.33457' -i '/home/moso/Downloads/demo-final.mp4' -t '11.43686' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/demo-final-00.00.01.335-00.00.12.771-seg1.mp4'
+2026-04-30T20:26:20.752Z info: ffmpeg -hide_banner -ss '15.89073' -i '/home/moso/Downloads/demo-final.mp4' -t '17.33752' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/demo-final-00.00.15.891-00.00.33.228-seg2.mp4'
+2026-04-30T20:26:20.811Z info: ffmpeg -hide_banner -ss '34.89020' -i '/home/moso/Downloads/demo-final.mp4' -t '62.95530' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/demo-final-00.00.34.890-00.01.37.845-seg3.mp4'
+2026-04-30T20:26:20.884Z info: ffmpeg -hide_banner -ss '100.05086' -i '/home/moso/Downloads/demo-final.mp4' -t '31.26817' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/demo-final-00.01.40.051-00.02.11.319-seg4.mp4'
+2026-04-30T20:26:20.941Z info: ffmpeg -hide_banner -ss '134.33799' -i '/home/moso/Downloads/demo-final.mp4' -t '18.39334' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/demo-final-00.02.14.338-00.02.32.731-seg5.mp4'
+2026-04-30T20:26:21.000Z info: ffmpeg -hide_banner -ss '157.79617' -i '/home/moso/Downloads/demo-final.mp4' -t '4.62717' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/demo-final-00.02.37.796-00.02.42.423-seg6.mp4'
+2026-04-30T20:26:21.056Z info: ffmpeg -hide_banner -ss '189.32512' -i '/home/moso/Downloads/demo-final.mp4' -t '2.87381' -avoid_negative_ts make_zero -map '0:0' '-c:0' copy -map '0:1' '-c:1' copy -map_metadata 0 -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/demo-final-00.03.09.325-00.03.12.199-seg7.mp4'
+2026-04-30T20:26:21.114Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/demo-final-00.00.01.335-00.00.12.771-seg1.mp4' -hide_banner
+2026-04-30T20:26:21.154Z info: readFormatData /home/moso/Downloads/demo-final-00.00.01.335-00.00.12.771-seg1.mp4
+2026-04-30T20:26:21.154Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/demo-final-00.00.01.335-00.00.12.771-seg1.mp4' -hide_banner
+2026-04-30T20:26:21.193Z info: readFormatData /home/moso/Downloads/demo-final-00.00.15.891-00.00.33.228-seg2.mp4
+2026-04-30T20:26:21.193Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/demo-final-00.00.15.891-00.00.33.228-seg2.mp4' -hide_banner
+2026-04-30T20:26:21.233Z info: readFormatData /home/moso/Downloads/demo-final-00.00.34.890-00.01.37.845-seg3.mp4
+2026-04-30T20:26:21.233Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/demo-final-00.00.34.890-00.01.37.845-seg3.mp4' -hide_banner
+2026-04-30T20:26:21.270Z info: readFormatData /home/moso/Downloads/demo-final-00.01.40.051-00.02.11.319-seg4.mp4
+2026-04-30T20:26:21.270Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/demo-final-00.01.40.051-00.02.11.319-seg4.mp4' -hide_banner
+2026-04-30T20:26:21.311Z info: readFormatData /home/moso/Downloads/demo-final-00.02.14.338-00.02.32.731-seg5.mp4
+2026-04-30T20:26:21.311Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/demo-final-00.02.14.338-00.02.32.731-seg5.mp4' -hide_banner
+2026-04-30T20:26:21.350Z info: readFormatData /home/moso/Downloads/demo-final-00.02.37.796-00.02.42.423-seg6.mp4
+2026-04-30T20:26:21.350Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/demo-final-00.02.37.796-00.02.42.423-seg6.mp4' -hide_banner
+2026-04-30T20:26:21.386Z info: readFormatData /home/moso/Downloads/demo-final-00.03.09.325-00.03.12.199-seg7.mp4
+2026-04-30T20:26:21.386Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/demo-final-00.03.09.325-00.03.12.199-seg7.mp4' -hide_banner
+2026-04-30T20:26:21.420Z info: ffmpeg -hide_banner -f concat -safe 0 -protocol_whitelist 'file,pipe,fd' -i - -map '0:0' '-c:0' copy '-disposition:0' default -map '0:1' '-c:1' copy '-disposition:1' default -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/demo-final-2.mp4'
+2026-04-30T20:26:21.642Z warn: Notification failed 
