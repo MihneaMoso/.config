@@ -143,6 +143,12 @@ map('n', '<C-w><C-Down>', '<C-w>j')
 map('n', '<C-w><C-Left>', '<C-w>h')
 map('n', '<C-w><C-Right>', '<C-w>l')
 
+-- Autosave
+
+vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+  pattern = "*",
+  command = "silent! update",
+})
 
 -- Load the bootstrap and lazy setup
 require("config.lazy")
