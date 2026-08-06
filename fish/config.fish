@@ -14,3 +14,9 @@ set -Ux --export SSL_CERT_FILE '/etc/ssl/certs/ca-certificates.crt'
 # aliases
 # alias curl="curl -k"
 alias v="nvim"
+
+# nub
+set -gx PATH "$HOME/.nub/bin" $PATH
+
+# Editor
+set -gx EDITOR nvim

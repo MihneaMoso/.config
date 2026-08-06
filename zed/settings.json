@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "disable_ai": false,
   "project_panel": {
     "dock": "left"
   },
@@ -17,6 +18,12 @@
     "dock": "left"
   },
   "agent": {
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "enable_thinking": true,
+      "effort": "minimal"
+    },
     "dock": "right",
     "favorite_models": [],
     "model_parameters": []
