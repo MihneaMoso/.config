@@ -37,7 +37,7 @@
     }
   },
   "icon_theme": {
-    "mode": "dark",
+    "mode": "light",
     "light": "Zed (Default)",
     "dark": "Zed (Default)"
   },
@@ -46,6 +46,6 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Dracula",
+    "dark": "Gruber Darker - Minimal",
   },
 }
