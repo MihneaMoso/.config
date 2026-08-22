@@ -8,6 +8,9 @@ require("autocommands")
 require("navigation")
 require("keymaps")
 require("netrw")
+require("grep")
+require("statusline")
+require("find")
 
 
 -- Load the bootstrap and lazy setup
