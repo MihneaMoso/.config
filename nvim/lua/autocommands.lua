@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
 })
 
 -- don't really know where to put this yet
-vim.cmd(":command! -nargs=+ Grep execute 'silent grep! <args>' | copen")
+-- vim.cmd(":command! -nargs=+ Grep execute 'silent grep! <args>' | copen")
 -- another better version would be:
 -- vim.api.nvim_create_user_command("Grep", function(opts)
 --     vim.cmd("silent grep! " .. vim.fn.shellescape(opts.args))

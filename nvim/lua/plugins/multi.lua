@@ -23,6 +23,7 @@ return {
             -- By default, vim-visual-multi uses <Esc> or 'q' to exit.
             -- If it doesn't feel snappy, you can explicitly map it:
             vim.g.VM_quit_after_leaving_insert_mode = 0 -- Keep cursors when leaving insert mode
+            vim.g.VM_silent_exit = 1
         end,
     },
 }
