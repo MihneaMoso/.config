@@ -18,7 +18,6 @@ return {
             vim.keymap.set('n', '<C-S-LeftMouse>', '<Plug>(VM-Mouse-Cursor)', { desc = 'Add cursor at click' })
             vim.keymap.set('n', '<C-LeftMouse>', '<Plug>(VM-Mouse-Cursor)', { desc = 'Add cursor' })
 
-            vim.keymap.set('n', '<C-LeftMouse>', '<Nop>', { noremap = true, silent = true })
             -- Escape behavior
             -- By default, vim-visual-multi uses <Esc> or 'q' to exit.
             -- If it doesn't feel snappy, you can explicitly map it:

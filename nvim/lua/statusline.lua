@@ -36,20 +36,74 @@ function _G._statusline()
 	return "%#StlMode# " .. mode .. " %*" .. branch .. " " .. path .. "%=" .. diag .. " " .. vim.bo.filetype .. " %l:%c"
 end
 
-vim.api.nvim_create_autocmd("BufEnter", {
-	callback = function()
-		local root = vim.fn.system("git rev-parse --show-toplevel 2>/dev/null"):gsub("%s+$", "")
-		if root ~= "" then
-			vim.b.git_branch = vim.fn.system("git branch --show-current 2>/dev/null"):gsub("%s+$", "")
-			vim.b.rel_path = vim.fn.expand("%:p"):sub(#root + 2)
-		else
-			vim.b.git_branch = nil
-			vim.b.rel_path = vim.fn.expand("%:p:~")
+-- Git info for the statusline: looked up once per buffer directory (asynchronously,
+-- never blocking) and cached, instead of running synchronous `git` subprocesses on
+-- every BufEnter. Re-entering buffers in a known project costs zero subprocesses.
+local git_info = {} -- [dir] = { pending = bool, root = string|false, branch = string|nil }
+
+local function apply_git_info(entry)
+	if entry.root then
+		vim.b.git_branch = entry.branch
+		vim.b.rel_path = vim.fs.relpath(entry.root, vim.api.nvim_buf_get_name(0))
+	else
+		vim.b.git_branch = nil
+		vim.b.rel_path = vim.fn.expand("%:p:~")
+	end
+end
+
+local function update_git_info()
+	local dir = vim.fn.expand("%:p:h")
+	if dir == "" then
+		dir = vim.uv.cwd()
+	end
+
+	local entry = git_info[dir]
+	if entry then
+		if not entry.pending then
+			apply_git_info(entry)
 		end
-	end,
+		return
+	end
+
+	-- First time we see this directory: resolve it without blocking the UI.
+	entry = { pending = true }
+	git_info[dir] = entry
+
+	vim.system({ "git", "-C", dir, "rev-parse", "--show-toplevel" }, { text = true }, function(res)
+		vim.schedule(function()
+			entry.root = res.code == 0 and vim.trim(res.stdout) or false
+			if not entry.root then
+				entry.pending = false
+				if vim.fn.expand("%:p:h") == dir then
+					apply_git_info(entry)
+				end
+				vim.cmd.redrawstatus()
+				return
+			end
+
+			vim.system({ "git", "-C", entry.root, "branch", "--show-current" }, { text = true }, function(branch_res)
+				vim.schedule(function()
+					entry.branch = branch_res.code == 0 and vim.trim(branch_res.stdout) or nil
+					entry.pending = false
+					if vim.fn.expand("%:p:h") == dir then
+						apply_git_info(entry)
+					end
+					vim.cmd.redrawstatus()
+				end)
+			end)
+		end)
+	end)
+end
+
+local stl_group = vim.api.nvim_create_augroup("statusline", { clear = true })
+
+vim.api.nvim_create_autocmd({ "BufEnter", "DirChanged" }, {
+	group = stl_group,
+	callback = update_git_info,
 })
 
 vim.api.nvim_create_autocmd("DiagnosticChanged", {
+	group = stl_group,
 	callback = function()
 		vim.cmd("redrawstatus!")
 	end,
