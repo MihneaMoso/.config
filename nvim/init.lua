@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.g.termguicolors = true
+vim.o.termguicolors = true
 vim.g.neovide_cursor_animation_length = 0
 
 require("options")

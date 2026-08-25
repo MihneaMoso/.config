@@ -1,27 +1,29 @@
 
+local augroup = vim.api.nvim_create_augroup
+
 -- Ensure netrw is listed in the buffer list
 vim.api.nvim_create_autocmd({"FileType", "BufEnter"}, {
-    pattern = "netrw",
-    callback = function()
-        vim.opt_local.buflisted = true
-    end,
+	group = augroup("netrw_buflisted", { clear = true }),
+	pattern = "netrw",
+	callback = function()
+		vim.opt_local.buflisted = true
+	end,
 })
 
 -- Highlight selection on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-	group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
+	group = augroup("highlight_yank", { clear = true }),
 	pattern = "*",
 	desc = "highlight selection on yank",
 	callback = function()
-		vim.highlight.on_yank({ timeout = 200, visual = true })
+		vim.hl.on_yank({ timeout = 200, visual = true }) -- vim.hl (0.11+) replaces vim.highlight
 	end,
 })
 
 
 -- Autosave
-
 vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
-  pattern = "*",
+  group = augroup("autosave", { clear = true }),
   command = "silent! update",
 })
 
