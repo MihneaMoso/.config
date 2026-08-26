@@ -11,6 +11,7 @@ require("netrw")
 require("grep")
 require("statusline")
 require("find")
+require("lsp")
 
 
 -- Load the bootstrap and lazy setup
