@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 int main()
+{
+    printf("hello, sailor!\n");
+}
 
 
-
-caca = 1;
