@@ -5,7 +5,7 @@ cd /home/moso/.config
 
 if [[ $(git status --porcelain) ]]; then
     arr=()
-    mapfile -t arr < <(cat <({ git diff --name-only ; git diff --name-only --staged ; } | sort | uniq))
+    mapfile -t arr < <(cat <({ git diff --name-only ; git diff --name-only ; } | sort | uniq))
 
     (IFS=','; echo "Changes detected in ${arr[*]}")
 
