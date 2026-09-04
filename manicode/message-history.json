@@ -1,0 +1,14 @@
+[
+  "You are a senior Rust/Dioxus expert engineer. Analyze and explore this codebase and its docs and fix the following bug:\nOn android, pressing the 'upload picture' button in the settings crashes the app (only on android). I have connected the device via usb file transfer and you can use adb commands to debug this.",
+  "Press the hear icon and the upload button to simulate or have me press it while an adb debug process is running and ill give you the output, that would be way easier",
+  "Give me the build command to run and I'll do it myself and get back to you",
+  "The series of commands gets stuck at \"0.00s  INFO Bundling project...\"",
+  "continue",
+  "continue",
+  "This is the output",
+  "FINALLY the upload issue is fixed. Now please investigate and attempt to fix the sync issue: I entered the exact sync phrase that I did on my desktop on my phone and it didnt sync at all. Another big issue is that pressing the 'sync now' button on all platforms freezes the entire UI for about 10 seconds and the app is unusable",
+  "Stop running android builds yourself, make a script for me if it doesnt already exist that does all of that and uninstalls the old version, installing the new one to my phone so I can test the fixes",
+  "",
+  "I launch it on my phone and enter the phrase,it doesn't sync automatically, it says 'syncing' after i press sync now and it doesn't sync even after waiting for a while",
+  "coninue"
+]
