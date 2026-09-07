@@ -9,12 +9,8 @@ vim.o.hlsearch = false
 vim.o.incsearch = true
 vim.o.swapfile = false
 vim.o.backup = false
-<<<<<<< HEAD
 vim.o.wrap = true
 vim.o.linebreak = true
-=======
-vim.o.wrap = false
->>>>>>> d99348293b6fe283242973aba95390331f0bbfb1
 vim.o.undofile = true -- Neovim's default undodir (stdpath("state")/undo) always exists
 vim.o.list = true
 --vim.o.listchars = "tabs:> "

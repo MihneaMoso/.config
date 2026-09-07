@@ -330,7 +330,6 @@ hl.window_rule({
 --[[
   hyprbars { ... }
 ]]
-<<<<<<< HEAD
 -- NEW addidion: hyprbars new config in lua format
 -- Configure global hyprbars settings
 hl.config({
@@ -372,8 +371,6 @@ hl.plugin.hyprbars.add_button({
     icon = "",
     action = "hyprctl dispatch togglefloating"
 })
-=======
->>>>>>> d99348293b6fe283242973aba95390331f0bbfb1
 
 hl.config({
     general = {
