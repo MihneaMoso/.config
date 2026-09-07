@@ -330,6 +330,47 @@ hl.window_rule({
 --[[
   hyprbars { ... }
 ]]
+-- NEW addidion: hyprbars new config in lua format
+-- Configure global hyprbars settings
+hl.config({
+    plugin = {
+        hyprbars = {
+            bar_height = 28,
+            bar_color = "rgb(242424)",
+            ["col.text"] = "rgb(ffffff)",
+            bar_text_size = 12,
+            bar_text_font = "JetBrains Mono",
+            bar_text_align = "center",
+            bar_precedence_over_border = true,
+            on_double_click = "hyprctl dispatch fullscreen 1",
+        },
+    },
+})
+
+-- Add buttons (Right to Left order)
+hl.plugin.hyprbars.add_button({
+    bg_color = "rgb(ff4040)",
+    fg_color = "rgb(ffffff)",
+    size = 20,
+    icon = "",
+    action = "hyprctl dispatch killactive"
+})
+
+hl.plugin.hyprbars.add_button({
+    bg_color = "rgb(eeee11)",
+    fg_color = "rgb(000000)",
+    size = 20,
+    icon = "",
+    action = "hyprctl dispatch fullscreen 1"
+})
+
+hl.plugin.hyprbars.add_button({
+    bg_color = "rgb(44ff44)",
+    fg_color = "rgb(000000)",
+    size = 20,
+    icon = "",
+    action = "hyprctl dispatch togglefloating"
+})
 
 hl.config({
     general = {
