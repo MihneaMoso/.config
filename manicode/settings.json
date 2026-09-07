@@ -1,7 +1,0 @@
-{
-  "mode": "DEFAULT",
-  "adsEnabled": true,
-  "freebuffModel": "deepseek/deepseek-v4-flash",
-  "freebuffModelDefaultMigration": "deepseek-v4-flash-2026-09-02",
-  "hasSubmittedFirstPrompt": true
-}
