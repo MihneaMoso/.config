@@ -332,45 +332,64 @@ hl.window_rule({
 ]]
 -- NEW addidion: hyprbars new config in lua format
 -- Configure global hyprbars settings
-hl.config({
-    plugin = {
-        hyprbars = {
-            bar_height = 28,
-            bar_color = "rgb(242424)",
-            ["col.text"] = "rgb(ffffff)",
-            bar_text_size = 12,
-            bar_text_font = "JetBrains Mono",
-            bar_text_align = "center",
-            bar_precedence_over_border = true,
-            on_double_click = "hyprctl dispatch fullscreen 1",
+-- Load hyprbars through the config. On boot the first pass only registers the
+-- plugin path; Hyprland then loads it, discards the first pass and re-runs the
+-- config, at which point plugin:hyprbars:* options are valid.
+hl.plugin.load("/var/cache/hyprpm/moso/hyprland-plugins/hyprbars.so")
+
+-- Only touch plugin config when hyprbars is actually loaded, otherwise every
+-- plugin:hyprbars:* key is reported as "unknown config key".
+local hyprbarsLoaded = false
+for _, p in ipairs(hl.get_loaded_plugins()) do
+    if p.name == "hyprbars" then
+        hyprbarsLoaded = true
+        break
+    end
+end
+
+if hyprbarsLoaded then
+    hl.config({
+        plugin = {
+            hyprbars = {
+                bar_height = 28,
+                bar_color = "rgb(242424)",
+                ["col.text"] = "rgb(ffffff)",
+                bar_text_size = 12,
+                bar_text_font = "JetBrains Mono",
+                bar_text_align = "center",
+                bar_precedence_over_border = true,
+                on_double_click = "hyprctl dispatch fullscreen 1",
+            },
         },
-    },
-})
+    })
 
--- Add buttons (Right to Left order)
-hl.plugin.hyprbars.add_button({
-    bg_color = "rgb(ff4040)",
-    fg_color = "rgb(ffffff)",
-    size = 20,
-    icon = "",
-    action = "hyprctl dispatch killactive"
-})
+    -- Add buttons (Right to Left order)
+    if hl.plugin.hyprbars then
+        hl.plugin.hyprbars.add_button({
+            bg_color = "rgb(ff4040)",
+            fg_color = "rgb(ffffff)",
+            size = 20,
+            icon = "",
+            action = "hyprctl dispatch killactive"
+        })
 
-hl.plugin.hyprbars.add_button({
-    bg_color = "rgb(eeee11)",
-    fg_color = "rgb(000000)",
-    size = 20,
-    icon = "",
-    action = "hyprctl dispatch fullscreen 1"
-})
+        hl.plugin.hyprbars.add_button({
+            bg_color = "rgb(eeee11)",
+            fg_color = "rgb(000000)",
+            size = 20,
+            icon = "",
+            action = "hyprctl dispatch fullscreen 1"
+        })
 
-hl.plugin.hyprbars.add_button({
-    bg_color = "rgb(44ff44)",
-    fg_color = "rgb(000000)",
-    size = 20,
-    icon = "",
-    action = "hyprctl dispatch togglefloating"
-})
+        hl.plugin.hyprbars.add_button({
+            bg_color = "rgb(44ff44)",
+            fg_color = "rgb(000000)",
+            size = 20,
+            icon = "",
+            action = "hyprctl dispatch togglefloating"
+        })
+    end
+end
 
 hl.config({
     general = {
