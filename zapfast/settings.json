@@ -1,0 +1,22 @@
+{
+  "theme": "dark",
+  "zoom": 1.0,
+  "sidebar_width": 320.0,
+  "enter_sends": true,
+  "send_read_receipts": true,
+  "send_typing": true,
+  "auto_download": true,
+  "show_sender_pictures": false,
+  "last_chat": "40764221215@s.whatsapp.net",
+  "show_shortcut_hints": true,
+  "recent_emoji": [
+    "😔",
+    "🤫"
+  ],
+  "giphy_key": "",
+  "keep_running_in_background": true,
+  "notifications": true,
+  "check_for_updates": true,
+  "names_from_contacts": true,
+  "save_contacts_to_phone": true
+}
