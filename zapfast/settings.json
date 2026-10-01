@@ -1,22 +1,49 @@
 {
+  "version": 1,
   "theme": "dark",
+  "font": "system",
+  "interface_language": null,
+  "custom_theme": null,
   "zoom": 1.0,
   "sidebar_width": 320.0,
+  "search_pane_width": 380.0,
   "enter_sends": true,
   "send_read_receipts": true,
   "send_typing": true,
   "auto_download": true,
-  "show_sender_pictures": false,
-  "last_chat": "40726290195@s.whatsapp.net",
+  "show_wallpaper": true,
+  "wallpaper_color": "theme",
+  "dark_wallpaper_color": "theme",
+  "wallpaper_image": null,
+  "last_chat": "40764221215@s.whatsapp.net",
   "show_shortcut_hints": true,
   "recent_emoji": [
+    "🐯",
+    "❤️",
     "😔",
     "🤫"
+  ],
+  "reaction_emoji": [
+    [
+      "❤️",
+      1
+    ]
   ],
   "giphy_key": "",
   "keep_running_in_background": true,
   "notifications": true,
+  "message_sound": "receive",
+  "mention_sound": "alert",
+  "group_sounds": true,
+  "download_folder": null,
+  "proxy": "",
   "check_for_updates": true,
-  "names_from_contacts": true,
-  "save_contacts_to_phone": true
+  "download_updates_automatically": false,
+  "voice_speed": 1.0,
+  "pause_other_media": true,
+  "save_contacts_to_phone": true,
+  "chat_lock_code_hash": null,
+  "chat_lock_hint_dismissed": false,
+  "app_lock_hash": null,
+  "app_lock_after": "fifteen_minutes"
 }
