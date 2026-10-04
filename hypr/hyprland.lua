@@ -213,7 +213,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl eval 'hl.dispatch(hl.dsp.exit())'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(menu))
@@ -358,7 +358,7 @@ if hyprbarsLoaded then
                 bar_text_font = "JetBrains Mono",
                 bar_text_align = "center",
                 bar_precedence_over_border = true,
-                on_double_click = "hyprctl dispatch fullscreen 1",
+                on_double_click = "hyprctl eval 'hl.dispatch(hl.dsp.window.fullscreen({mode=1}))'",
             },
         },
     })
@@ -370,7 +370,7 @@ if hyprbarsLoaded then
             fg_color = "rgb(ffffff)",
             size = 20,
             icon = "",
-            action = "hyprctl dispatch killactive"
+            action = "hyprctl eval 'hl.dispatch(hl.dsp.window.close())'"
         })
 
         hl.plugin.hyprbars.add_button({
@@ -378,7 +378,7 @@ if hyprbarsLoaded then
             fg_color = "rgb(000000)",
             size = 20,
             icon = "",
-            action = "hyprctl dispatch fullscreen 1"
+            action = "hyprctl eval 'hl.dispatch(hl.dsp.window.fullscreen({mode=1}))'"
         })
 
         hl.plugin.hyprbars.add_button({
@@ -386,7 +386,7 @@ if hyprbarsLoaded then
             fg_color = "rgb(000000)",
             size = 20,
             icon = "",
-            action = "hyprctl dispatch togglefloating"
+            action = "hyprctl eval 'hl.dispatch(hl.dsp.window.float({action=\"toggle\"}))'"
         })
     end
 end
