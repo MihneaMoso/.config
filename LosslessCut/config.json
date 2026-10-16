@@ -1,7 +1,9 @@
 {
 	"version": 2,
-	"lastAppVersion": "3.68.0",
+	"lastAppVersion": "3.69.0",
 	"captureFormat": "jpeg",
+	"enableCustomOutDir": false,
+	"recentCustomOutDirs": [],
 	"keyframeCut": true,
 	"autoMerge": true,
 	"autoDeleteMergedSegments": true,
@@ -338,5 +340,6 @@
 	"storeWindowBounds": true,
 	"thumbnailsEnabled": false,
 	"keyframesEnabled": true,
-	"reducedMotion": "user"
+	"reducedMotion": "user",
+	"ffmpegHwaccel": "none"
 }
