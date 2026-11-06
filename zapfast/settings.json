@@ -1,22 +1,168 @@
 {
-  "version": 1,
-  "theme": "dark",
-  "font": "system",
-  "interface_language": null,
-  "custom_theme": null,
-  "zoom": 1.0,
-  "sidebar_width": 320.0,
-  "search_pane_width": 380.0,
-  "enter_sends": true,
-  "send_read_receipts": true,
-  "send_typing": true,
+  "app_lock_after": "fifteen_minutes",
+  "app_lock_hash": null,
   "auto_download": true,
-  "show_wallpaper": true,
-  "wallpaper_color": "theme",
+  "chat_lock_code_hash": null,
+  "chat_lock_hint_dismissed": false,
+  "check_for_updates": true,
+  "custom_theme": "Catppuccin.json",
+  "custom_theme_cache": {
+    "filename": "Catppuccin.json",
+    "palette": {
+      "accent": [
+        137,
+        180,
+        250,
+        255
+      ],
+      "accent_hover": [
+        147,
+        185,
+        249,
+        255
+      ],
+      "bubble_in": [
+        52,
+        53,
+        71,
+        255
+      ],
+      "bubble_out": [
+        66,
+        77,
+        107,
+        255
+      ],
+      "chat": [
+        30,
+        30,
+        46,
+        255
+      ],
+      "danger": [
+        243,
+        139,
+        168,
+        255
+      ],
+      "dark": true,
+      "dim": [
+        118,
+        122,
+        145,
+        255
+      ],
+      "link": [
+        137,
+        180,
+        250,
+        255
+      ],
+      "on_accent": [
+        30,
+        30,
+        46,
+        255
+      ],
+      "outline": [
+        65,
+        67,
+        86,
+        255
+      ],
+      "overlay": [
+        35,
+        36,
+        52,
+        255
+      ],
+      "panel": [
+        35,
+        36,
+        52,
+        255
+      ],
+      "read": [
+        137,
+        180,
+        250,
+        255
+      ],
+      "secondary": [
+        153,
+        159,
+        185,
+        255
+      ],
+      "shadow": [
+        0,
+        0,
+        0,
+        140
+      ],
+      "surface": [
+        44,
+        45,
+        62,
+        255
+      ],
+      "surface_active": [
+        62,
+        63,
+        82,
+        255
+      ],
+      "surface_hover": [
+        51,
+        52,
+        70,
+        255
+      ],
+      "text": [
+        205,
+        214,
+        244,
+        255
+      ],
+      "warning": [
+        249,
+        226,
+        175,
+        255
+      ],
+      "window": [
+        30,
+        30,
+        46,
+        255
+      ]
+    }
+  },
+  "custom_titlebar": false,
   "dark_wallpaper_color": "theme",
-  "wallpaper_image": null,
-  "last_chat": "40766583020@s.whatsapp.net",
-  "show_shortcut_hints": true,
+  "download_folder": null,
+  "download_updates_automatically": true,
+  "enter_sends": true,
+  "font": "inter",
+  "giphy_key": "",
+  "group_sounds": true,
+  "info_pane_width": 380.0,
+  "interface_language": null,
+  "keep_chats_archived": true,
+  "keep_running_in_background": true,
+  "last_chat": "120363155180490235@g.us",
+  "mention_sound": "alert",
+  "message_sound": "receive",
+  "notification_content": true,
+  "notifications": true,
+  "pause_other_media": true,
+  "proxy": "",
+  "reaction_emoji": [
+    [
+      "❤️",
+      1
+    ]
+  ],
   "recent_emoji": [
     "😔",
     "👀",
@@ -24,27 +170,22 @@
     "❤️",
     "🤫"
   ],
-  "reaction_emoji": [
-    [
-      "❤️",
-      1
-    ]
-  ],
-  "giphy_key": "",
-  "keep_running_in_background": true,
-  "notifications": true,
-  "message_sound": "receive",
-  "mention_sound": "alert",
-  "group_sounds": true,
-  "download_folder": null,
-  "proxy": "",
-  "check_for_updates": true,
-  "download_updates_automatically": false,
-  "voice_speed": 1.0,
-  "pause_other_media": true,
   "save_contacts_to_phone": true,
-  "chat_lock_code_hash": null,
-  "chat_lock_hint_dismissed": false,
-  "app_lock_hash": null,
-  "app_lock_after": "fifteen_minutes"
+  "search_pane_width": 380.0,
+  "send_read_receipts": true,
+  "send_typing": true,
+  "show_shortcut_hints": true,
+  "show_wallpaper": true,
+  "sidebar_width": 320.0,
+  "theme": "dark",
+  "version": 1,
+  "voice_speed": 1.0,
+  "wallpaper_color": "theme",
+  "wallpaper_image": null,
+  "window_height": 1365.0,
+  "window_maximized": true,
+  "window_width": 1260.0,
+  "window_x": null,
+  "window_y": null,
+  "zoom": 1.0
 }
