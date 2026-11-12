@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export APINEX_API_KEY:sk\x2dapx88366ae1abb3e436f32810f5c6ac88637c0cb101a88713f
 SETUVAR --export SSL_CERT_FILE:/etc/ssl/certs/ca\x2dcertificates\x2ecrt
 SETUVAR __done_min_cmd_duration:10000
 SETUVAR __done_notification_urgency_level:low

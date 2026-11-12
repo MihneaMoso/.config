@@ -229,6 +229,17 @@ hl.bind("ALT + Tab", hl.dsp.window.bring_to_top())
 
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("systemctl suspend"))
 
+-- Toggle hypridle (display off / session lock) with ALT + L
+hl.bind("ALT + L", hl.dsp.exec_cmd([[
+  if pgrep -x hypridle >/dev/null; then
+    pkill hypridle
+    hyprctl notify 0 2000 0 "fontsize:14 Idle Inhibitor: ON (display/lock disabled)"
+  else
+    hypridle &
+    hyprctl notify 0 2000 0 "fontsize:14 Idle Inhibitor: OFF (display/lock enabled)"
+  fi
+]]))
+
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))

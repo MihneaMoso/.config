@@ -1039,3 +1039,12 @@
 2026-04-30T20:26:21.386Z info: ffprobe -of json -show_format -i '/home/moso/Downloads/demo-final-00.03.09.325-00.03.12.199-seg7.mp4' -hide_banner
 2026-04-30T20:26:21.420Z info: ffmpeg -hide_banner -f concat -safe 0 -protocol_whitelist 'file,pipe,fd' -i - -map '0:0' '-c:0' copy '-disposition:0' default -map '0:1' '-c:1' copy '-disposition:1' default -movflags '+faststart' -default_mode infer_no_subs -ignore_unknown -f mp4 -y '/home/moso/Downloads/demo-final-2.mp4'
 2026-04-30T20:26:21.642Z warn: Notification failed 
+2026-10-12T14:09:34.023Z info: LosslessCut version 3.69.0 { isDev: false }
+2026-10-12T14:09:34.031Z info: Initialized config store
+2026-10-12T14:09:34.033Z info: Waiting for app to become ready
+2026-10-12T14:09:34.103Z info: CLI arguments { _: [ '/home/moso/Downloads/j-ai-faim-song.mp4' ] }
+2026-10-12T14:09:34.497Z info: Current version 3.69.0
+2026-10-12T14:09:34.498Z info: Newest version 3.69.0
+2026-10-12T14:09:34.775Z info: ffmpeg -f lavfi -i 'nullsrc=s=256x256:d=1' -f null -
+2026-10-12T14:09:34.889Z info: ffprobe -v 0 -of json -show_program_version
+2026-10-12T14:09:34.926Z info: ffprobe -of json -show_chapters -show_format -show_entries stream -i '/home/moso/Downloads/j-ai-faim-song.mp4' -hide_banner

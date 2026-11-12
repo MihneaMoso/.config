@@ -1,10 +1,84 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "provider": {
-    "omnirouter": {
-      "name": "Omnirouter (local)",
-      "options": {
-        "baseURL": "http://localhost:20128/v1"
+  "model": "apinex/free-deepseek-v4.1-flash",
+  "agents": {
+    // zero-cost model for titles/background tasks
+    "title": { "model": "apinex/free-glm-5.3-flashx" }
+  },
+  "providers": {
+    "apinex": {
+      "name": "Apinex (free tier)",
+      "env": ["APINEX_API_KEY"],
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": { "baseURL": "https://api.apinex.bond/v1", "apiKey": "{env:APINEX_API_KEY}" },
+      // gateways reject compressed bodies; plain JSON is the safe default
+      "compatibility": { "streamUsage": true },
+      "models": {
+        "free-deepseek-v4-flash-0731": {
+          "modelID": "free/deepseek-v4-flash-0731",
+          "name": "DeepSeek V4 Flash 0731 (free)",
+          "family": "deepseek",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] },
+          "limit": { "context": 1000000, "output": 65536 }
+        },
+        "free-deepseek-v4-pro-0813": {
+          "modelID": "free/deepseek-v4-pro-0813",
+          "name": "DeepSeek V4 Pro 0813 (free)",
+          "family": "deepseek",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] },
+          "limit": { "context": 1000000, "output": 65536 }
+        },
+        "free-glm-5.3": {
+          "modelID": "free/glm-5.3",
+          "name": "GLM 5.3 (free)",
+          "family": "glm",
+          "capabilities": { "tools": true, "input": ["text", "image"], "output": ["text"] },
+          "limit": { "context": 1000000, "output": 65536 }
+        },
+        "free-glm-5.3-flashx": {
+          "modelID": "free/glm-5.3-flashx",
+          "name": "GLM 5.3 Flash (free)",
+          "family": "glm",
+          "capabilities": { "tools": true, "input": ["text", "image"], "output": ["text"] },
+          "limit": { "context": 1000000, "output": 65536 }
+        },
+        "free-hy4": {
+          "modelID": "free/hy4",
+          "name": "HY 4 (free)",
+          "family": "hy",
+          // spec page lists input as text-only despite the 1M window
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] },
+          "limit": { "context": 1000000, "output": 65536 }
+        },
+        "free-kimi-k2.8": {
+          "modelID": "free/kimi-k2.8",
+          "name": "Kimi K2.8 (free)",
+          "family": "kimi",
+          "capabilities": { "tools": true, "input": ["text", "image"], "output": ["text"] },
+          "limit": { "context": 1000000, "output": 65536 }
+        },
+        "free-mimo-v2.6-flash": {
+          "modelID": "free/mimo-v2.6-flash",
+          "name": "MiMo V2.6 Flash (free)",
+          "family": "mimo",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] },
+          "limit": { "context": 1000000, "output": 65536 }
+        },
+        "free-mimo-v2.6-pro": {
+          "modelID": "free/mimo-v2.6-pro",
+          "name": "MiMo V2.6 Pro (free)",
+          "family": "mimo",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] },
+          "limit": { "context": 1000000, "output": 65536 }
+        },
+        "free-muse-spark-1.3": {
+          "modelID": "free/muse-spark-1.3",
+          "name": "Muse Spark 1.3 (free)",
+          "family": "muse",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] },
+          "limit": { "context": 1000000, "output": 65536 }
+        }
+        // + the rest once /v1/models confirms them
       }
     }
   }
