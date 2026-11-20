@@ -35,10 +35,13 @@ all of its other application configs are never touched.
 
 The sparse clone keeps the repository root as its checkout root, so the config
 files live at `~/.local/share/opencode-config/opencode/`. That is why the symlink
-target includes the trailing `/opencode`.
+target includes the trailing `/opencode`. Non-cone sparse checkout is used with
+two patterns so that **only** `opencode/` is materialized (cone mode would also
+check out every root-level file):
 
-Sparse-checkout patterns are stored in the laptop clone at
-`.git/info/sparse-checkout` (non-cone mode).
+```bash
+git sparse-checkout set --no-cone '!/*' '/opencode/'
+```
 
 ## Files that are synchronized
 
@@ -56,9 +59,9 @@ are referenced with `{env:...}` placeholders, so no secrets live in these files.
 
 ## Files that stay local
 
-- `service.json` — machine-generated service password/route state. Excluded from
-  the laptop checkout by the sparse-checkout pattern. OpenCode regenerates it;
-  never commit it.
+- `service.json` — machine-generated service password/route state. It is not
+  tracked by Git and is ignored via `~/.config/.gitignore`, so neither machine
+  can push or pull it. OpenCode regenerates it locally.
 - `opencode/.gitignore`, `package.json`, `package-lock.json`, `node_modules/` —
   local dependency install, already ignored on the desktop.
 - `~/.local/share/opencode/` — sessions, SQLite DB, logs, caches, service state.
@@ -91,21 +94,22 @@ Desktop:
 ```bash
 cd ~/.config
 git add opencode
-git restore --staged opencode/service.json
 git commit -m "Update OpenCode configuration"
 git push
 ```
 
-Laptop (add portable paths explicitly so a local `service.json` is never staged):
+Laptop:
 
 ```bash
 cd ~/.local/share/opencode-config
-git add opencode/opencode.jsonc opencode/cli.json    # add any other changed portable files too
+git add opencode
 git commit -m "Update OpenCode configuration (laptop)"
 git push
 ```
 
-Never force-push, never `git reset --hard`, never `git clean -fd`.
+On the desktop, leave unrelated edits (fish, htop, nvim, etc.) unstaged unless
+you intentionally want to commit them. Never force-push, never `git reset --hard`,
+never `git clean -fd`.
 
 ## Resolving conflicts
 
@@ -129,14 +133,14 @@ git clone --filter=blob:none --sparse \
   ~/.local/share/opencode-config
 
 cd ~/.local/share/opencode-config
-git sparse-checkout set --no-cone '/*' '!/*/' '/opencode/' '!/opencode/service.json'
-git ls-files | head          # sanity check: opencode.jsonc present, service.json absent
+git sparse-checkout set --no-cone '!/*' '/opencode/'
+git ls-files -- opencode      # sanity check: opencode.jsonc, cli.json, SYNC.md present
 
 # only if a fresh ~/.config/opencode already exists and you intend to replace it:
 rm -rf ~/.config/opencode
 ln -s ~/.local/share/opencode-config/opencode ~/.config/opencode
 
-opencode models              # apinex/... and centai/... should be listed
+opencode models               # apinex/... and centai/... should be listed
 ```
 
 If the clone is not on the right branch: `git switch master`.

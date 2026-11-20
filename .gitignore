@@ -14,3 +14,5 @@ create-next-app-nodejs/*
 go/*
 nextjs-nodejs/*
 github-copilot/*
+# OpenCode background-service runtime state (machine-specific, regenerated locally)
+opencode/service.json
