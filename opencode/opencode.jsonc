@@ -215,125 +215,127 @@
         "baseURL": "https://crowllm.com/v1",
         "apiKey": "{env:CROWLLM_API_KEY}"
       },
+      // Only models enabled for this key's "free" group are listed here.
+      // Pro-only models (Claude, GPT, Gemini, etc.) need an upgraded key/plan.
       "models": {
-        "deepseek-v4.1-flash": {
-          "modelID": "deepseek-v4.1-flash",
-          "name": "DeepSeek V4.1 Flash (CrowLLM)",
-          "family": "deepseek",
+        "nvidia/nemotron-3.5-bolt-e4b:free": {
+          "modelID": "nvidia/nemotron-3.5-bolt-e4b:free",
+          "name": "Nemotron 3.5 Bolt E4B — free (CrowLLM)",
+          "family": "nvidia",
           "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
         },
-        "deepseek-v4-pro": {
-          "modelID": "deepseek-v4-pro",
-          "name": "DeepSeek V4 Pro (CrowLLM)",
-          "family": "deepseek",
+        "laguna-xs-2.1:free": {
+          "modelID": "laguna-xs-2.1:free",
+          "name": "Laguna XS 2.1 — free (CrowLLM)",
+          "family": "poolside",
           "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
         },
-        "glm-5.3-flash": {
-          "modelID": "glm-5.3-flash",
-          "name": "GLM 5.3 Flash (CrowLLM)",
-          "family": "glm",
+        "laguna-xs-2.1-uncensored:free": {
+          "modelID": "laguna-xs-2.1-uncensored:free",
+          "name": "Laguna XS 2.1 Uncensored — free (CrowLLM)",
+          "family": "poolside",
           "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
         },
-        "glm-5.3": {
-          "modelID": "glm-5.3",
-          "name": "GLM 5.3 (CrowLLM)",
-          "family": "glm",
+        "k2-horizon-375b-a23b:free": {
+          "modelID": "k2-horizon-375b-a23b:free",
+          "name": "K2 Horizon 375B — free (CrowLLM)",
+          "family": "moonshot",
           "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
         },
-        "gpt-6.2-sol": {
-          "modelID": "gpt-6.2-sol",
-          "name": "GPT-6.2 Sol (CrowLLM)",
-          "family": "openai",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b:free": {
+          "modelID": "nvidia/nemotron-3.5-super-vl-120b-a12b:free",
+          "name": "Nemotron 3.5 Super VL 120B — free (CrowLLM)",
+          "family": "nvidia",
+          "capabilities": { "tools": true, "input": ["text", "image"], "output": ["text"] }
+        },
+        "jais-3-mova-36b-a4b:free": {
+          "modelID": "jais-3-mova-36b-a4b:free",
+          "name": "Jais 3 Mova 36B — free (CrowLLM)",
+          "family": "inception",
           "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
         },
-        "gpt-6-luna": {
-          "modelID": "gpt-6-luna",
-          "name": "GPT-6 Luna (CrowLLM)",
-          "family": "openai",
+        "nemotron-3.5-super-vl:free": {
+          "modelID": "nemotron-3.5-super-vl:free",
+          "name": "Nemotron 3.5 Super VL — free (CrowLLM)",
+          "family": "nvidia",
+          "capabilities": { "tools": true, "input": ["text", "image"], "output": ["text"] }
+        },
+        "nemotron-3-ultra-550b-a55b-uncensored:free": {
+          "modelID": "nemotron-3-ultra-550b-a55b-uncensored:free",
+          "name": "Nemotron 3 Ultra 550B Uncensored — free (CrowLLM)",
+          "family": "nvidia",
           "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
         },
-        "claude-opus-5-5": {
-          "modelID": "claude-opus-5-5",
-          "name": "Claude Opus 5.5 (CrowLLM)",
-          "family": "anthropic",
-          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
-        },
-        "claude-sonnet-5-5": {
-          "modelID": "claude-sonnet-5-5",
-          "name": "Claude Sonnet 5.5 (CrowLLM)",
-          "family": "anthropic",
-          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
-        },
-        "claude-haiku-5-5": {
-          "modelID": "claude-haiku-5-5",
-          "name": "Claude Haiku 5.5 (CrowLLM)",
-          "family": "anthropic",
-          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
-        },
-        "gemini-4-argon": {
-          "modelID": "gemini-4-argon",
-          "name": "Gemini 4 Argon (CrowLLM)",
-          "family": "google",
-          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
-        },
-        "gemini-3.8-flash": {
-          "modelID": "gemini-3.8-flash",
-          "name": "Gemini 3.8 Flash (CrowLLM)",
-          "family": "google",
-          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
-        },
-        "kimi-k3.1-pro": {
-          "modelID": "kimi-k3.1-pro",
-          "name": "Kimi K3.1 Pro (CrowLLM)",
-          "family": "kimi",
-          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
-        },
-        "grok-4.7": {
-          "modelID": "grok-4.7",
-          "name": "Grok 4.7 (CrowLLM)",
-          "family": "xai",
-          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
-        },
-        "minimax-m3": {
-          "modelID": "minimax-m3",
-          "name": "MiniMax M3 (CrowLLM)",
-          "family": "minimax",
-          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
-        },
-        "mimo-v2.6-pro": {
-          "modelID": "mimo-v2.6-pro",
-          "name": "MiMo V2.6 Pro (CrowLLM)",
-          "family": "mimo",
-          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
-        },
-        "hy4": {
-          "modelID": "hy4",
-          "name": "HY4 (CrowLLM)",
-          "family": "hy",
-          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
-        },
-        "qwen3.8-max": {
-          "modelID": "qwen3.8-max",
-          "name": "Qwen 3.8 Max (CrowLLM)",
-          "family": "qwen",
+        "nemotron-3-ultra-550b-a55b:free": {
+          "modelID": "nemotron-3-ultra-550b-a55b:free",
+          "name": "Nemotron 3 Ultra 550B — free (CrowLLM)",
+          "family": "nvidia",
           "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
         },
         "hy4-flash:free": {
           "modelID": "hy4-flash:free",
-          "name": "HY4 Flash — free shelf (CrowLLM)",
+          "name": "HY4 Flash — free (CrowLLM)",
           "family": "hy",
           "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
         },
-        "glm-5.3-flash:free": {
-          "modelID": "glm-5.3-flash:free",
-          "name": "GLM 5.3 Flash — free shelf (CrowLLM)",
+        "solar-mini4:free": {
+          "modelID": "solar-mini4:free",
+          "name": "Solar Mini 4 — free (CrowLLM)",
+          "family": "upstage",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "openai/gpt-oss-safeguard-20b:free": {
+          "modelID": "openai/gpt-oss-safeguard-20b:free",
+          "name": "GPT-OSS Safeguard 20B — free (CrowLLM)",
+          "family": "openai",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "nvidia/mistral-large-4-1t-a52b:free": {
+          "modelID": "nvidia/mistral-large-4-1t-a52b:free",
+          "name": "Mistral Large 4 1T — free (CrowLLM)",
+          "family": "mistral",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "typhoon-v2.5-30b-a3b-instruct": {
+          "modelID": "typhoon-v2.5-30b-a3b-instruct",
+          "name": "Typhoon 2.5 30B Instruct — free (CrowLLM)",
+          "family": "typhoon",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "llama-3.3-70b-instruct:free": {
+          "modelID": "llama-3.3-70b-instruct:free",
+          "name": "Llama 3.3 70B Instruct — free (CrowLLM)",
+          "family": "meta",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "openai/gpt-oss-20b:free": {
+          "modelID": "openai/gpt-oss-20b:free",
+          "name": "GPT-OSS 20B — free (CrowLLM)",
+          "family": "openai",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "qwen3-8-omni-flash:free": {
+          "modelID": "qwen3-8-omni-flash:free",
+          "name": "Qwen 3.8 Omni Flash — free (CrowLLM)",
+          "family": "qwen",
+          "capabilities": { "tools": true, "input": ["text", "image"], "output": ["text"] }
+        },
+        "minimax-m3.1-flash:free": {
+          "modelID": "minimax-m3.1-flash:free",
+          "name": "MiniMax M3.1 Flash — free (CrowLLM)",
+          "family": "minimax",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "glm-4.7-flash:free": {
+          "modelID": "glm-4.7-flash:free",
+          "name": "GLM 4.7 Flash — free (CrowLLM)",
           "family": "glm",
           "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
         },
-        "qwen-3.8-27b:free": {
-          "modelID": "qwen-3.8-27b:free",
-          "name": "Qwen 3.8 27B — free shelf (CrowLLM)",
-          "family": "qwen",
+        "ernie-5.5-flash-preview:free": {
+          "modelID": "ernie-5.5-flash-preview:free",
+          "name": "Ernie 5.5 Flash — free (CrowLLM)",
+          "family": "baidu",
           "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
         }
       }

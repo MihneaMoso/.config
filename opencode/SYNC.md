@@ -55,9 +55,11 @@ Anything portable under `opencode/`:
 - any future portable file added under `opencode/`
 
 Current custom providers: `apinex` (9 models), `centai` (19 models) and `crowllm`
-(20 models). API keys are referenced with `{env:...}` placeholders, so no secrets
-live in these files. Each machine needs its own `APINEX_API_KEY`, `CENT_AI_KEY`
-and `CROWLLM_API_KEY` exported before starting OpenCode.
+(20 models, free-group only). API keys are referenced with `{env:...}`
+placeholders, so no secrets live in these files. Each machine needs its own
+`APINEX_API_KEY`, `CENT_AI_KEY` and `CROWLLM_API_KEY` exported before starting
+OpenCode. CrowLLM's catalogue separates models by key group — with a `free`
+key, only models whose `enable_groups` includes `free` will work.
 
 ## Files that stay local
 
