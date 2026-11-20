@@ -80,6 +80,132 @@
         }
         // + the rest once /v1/models confirms them
       }
+    },
+    "centai": {
+      "name": "Cent AI",
+      "env": ["CENT_AI_KEY"],
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": {
+        "baseURL": "https://api.cent-ai.dev/v1",
+        "apiKey": "{env:CENT_AI_KEY}"
+      },
+      "models": {
+        "deepseek-v4.1-flash": {
+          "modelID": "deepseek-v4.1-flash",
+          "name": "DeepSeek V4.1 Flash (Cent AI)",
+          "family": "deepseek",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "deepseek-v4-pro": {
+          "modelID": "deepseek-v4-pro",
+          "name": "DeepSeek V4 Pro (Cent AI)",
+          "family": "deepseek",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "glm-5.3-flash": {
+          "modelID": "glm-5.3-flash",
+          "name": "GLM 5.3 Flash (Cent AI)",
+          "family": "glm",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "glm-5.3": {
+          "modelID": "glm-5.3",
+          "name": "GLM 5.3 (Cent AI)",
+          "family": "glm",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "gpt-6-luna": {
+          "modelID": "gpt-6-luna",
+          "name": "GPT-6 Luna (Cent AI)",
+          "family": "openai",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "gpt-5.6-luna": {
+          "modelID": "gpt-5.6-luna",
+          "name": "GPT-5.6 Luna (Cent AI)",
+          "family": "openai",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "gpt-5.6-terra": {
+          "modelID": "gpt-5.6-terra",
+          "name": "GPT-5.6 Terra (Cent AI)",
+          "family": "openai",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "gpt-6.1-sol": {
+          "modelID": "gpt-6.1-sol",
+          "name": "GPT-6.1 Sol (Cent AI)",
+          "family": "openai",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "gpt-6.2-sol": {
+          "modelID": "gpt-6.2-sol",
+          "name": "GPT-6.2 Sol (Cent AI)",
+          "family": "openai",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "claude-haiku-5.5": {
+          "modelID": "claude-haiku-5.5",
+          "name": "Claude Haiku 5.5 (Cent AI)",
+          "family": "anthropic",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "claude-sonnet-4-6": {
+          "modelID": "claude-sonnet-4-6",
+          "name": "Claude Sonnet 4.6 (Cent AI)",
+          "family": "anthropic",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "claude-opus-5": {
+          "modelID": "claude-opus-5",
+          "name": "Claude Opus 5 (Cent AI)",
+          "family": "anthropic",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "claude-fable-5.2": {
+          "modelID": "claude-fable-5.2",
+          "name": "Claude Fable 5.2 (Cent AI)",
+          "family": "anthropic",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "gemini-3.8-flash": {
+          "modelID": "gemini-3.8-flash",
+          "name": "Gemini 3.8 Flash (Cent AI)",
+          "family": "google",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "gemini-4-argon": {
+          "modelID": "gemini-4-argon",
+          "name": "Gemini 4 Argon (Cent AI)",
+          "family": "google",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "kimi-k2.7-code": {
+          "modelID": "kimi-k2.7-code",
+          "name": "Kimi K2.7 Code (Cent AI)",
+          "family": "kimi",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "minimax-m3": {
+          "modelID": "minimax-m3",
+          "name": "MiniMax M3 (Cent AI)",
+          "family": "minimax",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "grok-4.5": {
+          "modelID": "grok-4.5",
+          "name": "Grok 4.5 (Cent AI)",
+          "family": "xai",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        },
+        "hy4-flash:free": {
+          "modelID": "hy4-flash:free",
+          "name": "HY4 Flash — free event model (Cent AI)",
+          "family": "hy",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] },
+          "limit": { "context": 1048576, "output": 65536 }
+        }
+      }
     }
   }
 }
