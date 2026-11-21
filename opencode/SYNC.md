@@ -54,12 +54,15 @@ Anything portable under `opencode/`:
 - this `SYNC.md`
 - any future portable file added under `opencode/`
 
-Current custom providers: `apinex` (9 models), `centai` (19 models) and `crowllm`
-(21 models, free-group only). API keys are referenced with `{env:...}`
-placeholders, so no secrets live in these files. Each machine needs its own
-`APINEX_API_KEY`, `CENT_AI_KEY` and `CROWLLM_API_KEY` exported before starting
-OpenCode. CrowLLM's catalogue separates models by key group — with a `free`
-key, only models whose `enable_groups` includes `free` will work.
+Current custom providers: `apinex` (9 models), `centai` (19 models), `crowllm`
+(21 models, free-group only), `explabs` (1 model) and `respan` (14 models).
+API keys are referenced with `{env:...}` placeholders, so no secrets live in
+these files. Each machine needs its own `APINEX_API_KEY`, `CENT_AI_KEY`,
+`CROWLLM_API_KEY`, `EXPLABS_API_KEY` and `RESPAN_API_KEY` exported before
+starting OpenCode. CrowLLM's catalogue separates models by key group — with a
+`free` key, only models whose `enable_groups` includes `free` will work.
+`~/.config/fish/fish_variables` is Git-ignored; keep shell secrets there or in
+session-only env vars, never in tracked files.
 
 ## Files that stay local
 

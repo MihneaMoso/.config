@@ -16,3 +16,6 @@ nextjs-nodejs/*
 github-copilot/*
 # OpenCode background-service runtime state (machine-specific, regenerated locally)
 opencode/service.json
+
+# Shell secrets (API keys live here)
+fish/fish_variables
