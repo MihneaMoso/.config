@@ -1,2 +1,3 @@
-2026/11/21-19:11:18.918 ad7fe Creating DB /home/moso/.config/deepai-code-v2/Session Storage since it was missing.
-2026/11/21-19:11:18.924 ad7fe Reusing MANIFEST /home/moso/.config/deepai-code-v2/Session Storage/MANIFEST-000001
+2026/11/25-19:53:12.593 14de5e Reusing MANIFEST /home/moso/.config/deepai-code-v2/Session Storage/MANIFEST-000001
+2026/11/25-19:53:12.593 14de5e Recovering log #3
+2026/11/25-19:53:12.593 14de5e Reusing old log /home/moso/.config/deepai-code-v2/Session Storage/000003.log 

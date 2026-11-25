@@ -1,2 +1,3 @@
-2026/11/21-19:11:16.506 ad7fe Creating DB /home/moso/.config/deepai-code-v2/Local Storage/leveldb since it was missing.
-2026/11/21-19:11:16.519 ad7fe Reusing MANIFEST /home/moso/.config/deepai-code-v2/Local Storage/leveldb/MANIFEST-000001
+2026/11/25-19:53:10.424 14de7c Reusing MANIFEST /home/moso/.config/deepai-code-v2/Local Storage/leveldb/MANIFEST-000001
+2026/11/25-19:53:10.425 14de7c Recovering log #4
+2026/11/25-19:53:10.425 14de7c Reusing old log /home/moso/.config/deepai-code-v2/Local Storage/leveldb/000004.log 

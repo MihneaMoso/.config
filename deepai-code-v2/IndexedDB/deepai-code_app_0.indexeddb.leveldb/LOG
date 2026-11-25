@@ -1,3 +1,12 @@
-2026/11/21-19:12:33.574 addec Reusing MANIFEST /home/moso/.config/deepai-code-v2/IndexedDB/deepai-code_app_0.indexeddb.leveldb/MANIFEST-000001
-2026/11/21-19:12:33.574 addec Recovering log #3
-2026/11/21-19:12:33.575 addec Reusing old log /home/moso/.config/deepai-code-v2/IndexedDB/deepai-code_app_0.indexeddb.leveldb/000003.log 
+2026/11/25-20:01:02.629 14f13d Reusing MANIFEST /home/moso/.config/deepai-code-v2/IndexedDB/deepai-code_app_0.indexeddb.leveldb/MANIFEST-000001
+2026/11/25-20:01:02.630 14f13d Recovering log #4
+2026/11/25-20:01:02.633 14f13d Reusing old log /home/moso/.config/deepai-code-v2/IndexedDB/deepai-code_app_0.indexeddb.leveldb/000004.log 
+2026/11/25-20:03:24.519 14f13d Level-0 table #8: started
+2026/11/25-20:03:24.541 14f13d Level-0 table #8: 3677157 bytes OK
+2026/11/25-20:03:24.544 14f13d Delete type=0 #4
+2026/11/25-20:16:51.750 14f11f Compacting 1@1 + 1@2 files
+2026/11/25-20:16:51.764 14f11f Generated table #9@1: 93 keys, 89052 bytes
+2026/11/25-20:16:51.764 14f11f Compacted 1@1 + 1@2 files => 89052 bytes
+2026/11/25-20:16:51.766 14f11f compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/11/25-20:16:51.766 14f11f Delete type=2 #5
+2026/11/25-20:16:51.766 14f11f Delete type=2 #8

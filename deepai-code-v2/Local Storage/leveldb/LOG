@@ -1,3 +1,6 @@
-2026/11/21-19:12:30.540 addec Reusing MANIFEST /home/moso/.config/deepai-code-v2/Local Storage/leveldb/MANIFEST-000001
-2026/11/21-19:12:30.541 addec Recovering log #3
-2026/11/21-19:12:30.541 addec Reusing old log /home/moso/.config/deepai-code-v2/Local Storage/leveldb/000003.log 
+2026/11/25-20:01:00.138 14f13d Reusing MANIFEST /home/moso/.config/deepai-code-v2/Local Storage/leveldb/MANIFEST-000001
+2026/11/25-20:01:00.138 14f13d Recovering log #4
+2026/11/25-20:01:00.139 14f13d Reusing old log /home/moso/.config/deepai-code-v2/Local Storage/leveldb/000004.log 
+2026/11/25-20:03:02.252 14f13d Level-0 table #8: started
+2026/11/25-20:03:02.254 14f13d Level-0 table #8: 17141 bytes OK
+2026/11/25-20:03:02.257 14f13d Delete type=0 #4
